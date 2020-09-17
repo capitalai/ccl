@@ -10,7 +10,6 @@
 #define obj_h
 
 #include "bag.h"
-#include "sys.h"
 
 // obj: virtual object base class
 
@@ -98,11 +97,11 @@ inline size_t obj_type(pobj_t o) { return pobj_type(o); }
 
 // macros for object access
 
-#define OBJ_STAT(o)    (pobj_stat(o) & OBJ_STAT_MASK)
+#define OBJ_STAT(o)          (pobj_stat(o) & OBJ_STAT_MASK)
 
 #define obj_stat_none(o)     (OBJ_STAT(o) == OBJ_STAT_NONE)
-#define obj_set_stat_none(o) obj_set_stat(o, OBJ_STAT_NONE)
 
+#define obj_set_stat_none(o) obj_set_stat(o, OBJ_STAT_NONE)
 #define obj_set_stat_halt(o) obj_set_stat(o, OBJ_STAT_HALT)
 
 #endif // CCL_CODE

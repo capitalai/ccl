@@ -25,13 +25,15 @@
 		0BEF4EAB248DB80A00AB1101 /* ccl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E97248DB80800AB1101 /* ccl.h */; };
 		0BEF4EAD248DB80A00AB1101 /* std.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E99248DB80800AB1101 /* std.h */; };
 		0BEF4EAE248DB80A00AB1101 /* sac.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E9A248DB80800AB1101 /* sac.h */; };
-		0BEF4EAF248DB80A00AB1101 /* sys.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E9B248DB80800AB1101 /* sys.h */; };
+		0BEF4EAF248DB80A00AB1101 /* com.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E9B248DB80800AB1101 /* com.h */; };
 		0BEF4EB0248DB80A00AB1101 /* lot.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E9C248DB80900AB1101 /* lot.h */; };
 		0BEF4EB1248DB80A00AB1101 /* sac.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4E9D248DB80900AB1101 /* sac.c */; };
 		0BEF4EB2248DB80A00AB1101 /* std.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4E9E248DB80900AB1101 /* std.c */; };
 		0BEF4EB3248DB80A00AB1101 /* obj.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E9F248DB80900AB1101 /* obj.h */; };
-		0BEF4EB5248DB80A00AB1101 /* sys.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4EA1248DB80900AB1101 /* sys.c */; };
+		0BEF4EB5248DB80A00AB1101 /* com.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4EA1248DB80900AB1101 /* com.c */; };
 		0BEF4EB7248DB80A00AB1101 /* lot.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4EA3248DB80900AB1101 /* lot.c */; };
+		0BF05FD725125FE100A502A0 /* txt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BF05FD525125FE100A502A0 /* txt.h */; };
+		0BF05FD825125FE100A502A0 /* txt.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BF05FD625125FE100A502A0 /* txt.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,13 +56,15 @@
 		0BEF4E97248DB80800AB1101 /* ccl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccl.h; sourceTree = "<group>"; };
 		0BEF4E99248DB80800AB1101 /* std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = std.h; sourceTree = "<group>"; };
 		0BEF4E9A248DB80800AB1101 /* sac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sac.h; sourceTree = "<group>"; };
-		0BEF4E9B248DB80800AB1101 /* sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sys.h; sourceTree = "<group>"; };
+		0BEF4E9B248DB80800AB1101 /* com.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = com.h; sourceTree = "<group>"; };
 		0BEF4E9C248DB80900AB1101 /* lot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lot.h; sourceTree = "<group>"; };
 		0BEF4E9D248DB80900AB1101 /* sac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sac.c; sourceTree = "<group>"; };
 		0BEF4E9E248DB80900AB1101 /* std.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = std.c; sourceTree = "<group>"; };
 		0BEF4E9F248DB80900AB1101 /* obj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obj.h; sourceTree = "<group>"; };
-		0BEF4EA1248DB80900AB1101 /* sys.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sys.c; sourceTree = "<group>"; };
+		0BEF4EA1248DB80900AB1101 /* com.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = com.c; sourceTree = "<group>"; };
 		0BEF4EA3248DB80900AB1101 /* lot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lot.c; sourceTree = "<group>"; };
+		0BF05FD525125FE100A502A0 /* txt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = txt.h; sourceTree = "<group>"; };
+		0BF05FD625125FE100A502A0 /* txt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = txt.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,31 +81,33 @@
 		0BEF4E82248DB57400AB1101 = {
 			isa = PBXGroup;
 			children = (
-				0B9BA142249D32BA009849A8 /* pod.h */,
-				0BAAE73724C98FA600B2A161 /* set.h */,
-				0BAAE73824C98FA600B2A161 /* set.c */,
-				0B9C89E024C69FB80019E0A8 /* pod.c */,
-				0B8E25DC249691830026BF8C /* bag.c */,
-				0B8E25DD249691830026BF8C /* bag.h */,
-				0B8E25D8249691760026BF8C /* pin.c */,
-				0B8E25D9249691760026BF8C /* pin.h */,
 				0BEF4E97248DB80800AB1101 /* ccl.h */,
 				0BEF4E96248DB80800AB1101 /* inc.h */,
 				0BEF4E95248DB80800AB1101 /* lib.h */,
-				0BEF4EA3248DB80900AB1101 /* lot.c */,
+				0BEF4E9B248DB80800AB1101 /* com.h */,
+				0BEF4EA1248DB80900AB1101 /* com.c */,
+				0B8E25DD249691830026BF8C /* bag.h */,
+				0B8E25DC249691830026BF8C /* bag.c */,
 				0BEF4E9C248DB80900AB1101 /* lot.h */,
-				0BEF4E92248DB80800AB1101 /* obj.c */,
-				0BEF4E9F248DB80900AB1101 /* obj.h */,
-				0BEF4E9D248DB80900AB1101 /* sac.c */,
+				0BEF4EA3248DB80900AB1101 /* lot.c */,
 				0BEF4E9A248DB80800AB1101 /* sac.h */,
+				0BEF4E9D248DB80900AB1101 /* sac.c */,
+				0BEF4E99248DB80800AB1101 /* std.h */,
+				0BEF4E9E248DB80900AB1101 /* std.c */,
+				0BEF4E9F248DB80900AB1101 /* obj.h */,
+				0BEF4E92248DB80800AB1101 /* obj.c */,
+				0B8E25D9249691760026BF8C /* pin.h */,
+				0B8E25D8249691760026BF8C /* pin.c */,
 				0B9BA13E249C2BA0009849A8 /* seq.h */,
+				0B9BA13F249C2BA0009849A8 /* seq.c */,
+				0B9BA142249D32BA009849A8 /* pod.h */,
+				0B9C89E024C69FB80019E0A8 /* pod.c */,
+				0BAAE73724C98FA600B2A161 /* set.h */,
+				0BAAE73824C98FA600B2A161 /* set.c */,
 				0B8C445024ECD4C000FC88E8 /* key.h */,
 				0B8C445124ECD4C000FC88E8 /* key.c */,
-				0B9BA13F249C2BA0009849A8 /* seq.c */,
-				0BEF4E9E248DB80900AB1101 /* std.c */,
-				0BEF4E99248DB80800AB1101 /* std.h */,
-				0BEF4EA1248DB80900AB1101 /* sys.c */,
-				0BEF4E9B248DB80800AB1101 /* sys.h */,
+				0BF05FD525125FE100A502A0 /* txt.h */,
+				0BF05FD625125FE100A502A0 /* txt.c */,
 				0BEF4E8C248DB57400AB1101 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,12 +130,13 @@
 				0B9BA140249C2BA0009849A8 /* seq.h in Headers */,
 				0B8E25DB249691760026BF8C /* pin.h in Headers */,
 				0B8C445224ECD4C000FC88E8 /* key.h in Headers */,
+				0BF05FD725125FE100A502A0 /* txt.h in Headers */,
 				0BEF4EB3248DB80A00AB1101 /* obj.h in Headers */,
 				0BEF4EAE248DB80A00AB1101 /* sac.h in Headers */,
 				0BEF4EAA248DB80A00AB1101 /* inc.h in Headers */,
 				0BEF4EB0248DB80A00AB1101 /* lot.h in Headers */,
 				0B9BA144249D32BA009849A8 /* pod.h in Headers */,
-				0BEF4EAF248DB80A00AB1101 /* sys.h in Headers */,
+				0BEF4EAF248DB80A00AB1101 /* com.h in Headers */,
 				0BEF4EAB248DB80A00AB1101 /* ccl.h in Headers */,
 				0BAAE73924C98FA600B2A161 /* set.h in Headers */,
 				0BEF4EAD248DB80A00AB1101 /* std.h in Headers */,
@@ -201,11 +208,12 @@
 				0BEF4EB1248DB80A00AB1101 /* sac.c in Sources */,
 				0BEF4EB2248DB80A00AB1101 /* std.c in Sources */,
 				0BAAE73A24C98FA600B2A161 /* set.c in Sources */,
+				0BF05FD825125FE100A502A0 /* txt.c in Sources */,
 				0B8E25DE249691830026BF8C /* bag.c in Sources */,
 				0BEF4EA6248DB80A00AB1101 /* obj.c in Sources */,
 				0B9C89E124C69FB80019E0A8 /* pod.c in Sources */,
 				0BEF4EB7248DB80A00AB1101 /* lot.c in Sources */,
-				0BEF4EB5248DB80A00AB1101 /* sys.c in Sources */,
+				0BEF4EB5248DB80A00AB1101 /* com.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

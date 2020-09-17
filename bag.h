@@ -10,7 +10,7 @@
 #define bag_h
 
 #include "inc.h"
-#include "sys.h"
+#include "com.h"
 
 // cap: capsule structure contains allocated memory buffer
 

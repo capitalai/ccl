@@ -9,7 +9,6 @@
 #include "lib.h"
 #include "bag.h"
 #include "sac.h"
-#include "sys.h"
 
 static bag_init_f* def_bag_init = sac_init;
 
