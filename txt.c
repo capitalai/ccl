@@ -9,6 +9,7 @@
 #include "lib.h"
 #include "txt.h"
 #include "sac.h"
+#include "obj.h"
 
 #if     SIZE_LEVEL == 1
 
@@ -26,6 +27,7 @@
 #endif
 #endif
 
+#define DEF_STR_ADD_RATE 4
 
 struct txt {
 
@@ -41,13 +43,22 @@ struct str {
 
 };
 
-static size_t def_txt_size = DEF_TXT_SIZE;
+static size_t def_txt_size     = DEF_TXT_SIZE;
+static size_t def_str_add_rate = DEF_STR_ADD_RATE;
 
 size_t txt_def_size(size_t new_size) {
 
     if(new_size) def_txt_size = MAX(new_size, DEF_TXT_SIZE);
 
     return def_txt_size;
+
+}
+
+size_t str_add_def_rate(size_t new_rate) {
+
+  if(new_rate) def_str_add_rate = new_rate;
+
+  return def_str_add_rate;
 
 }
 
@@ -101,9 +112,9 @@ size_t str_size(str* s) { cxz(s->d); return cap_size(s->d); }
 
 char*  str_data(str* s) { cxx(s->d); return cap_data(s->d); }
 
-size_t str_ask_size(str* s, size_t n) {
+str* str_ask(str* s, size_t n) {
 
-    size_t m  = str_size(s); ifn(n > m) return m;
+    size_t m  = str_size(s); ifn(n > m) return s;
 
     size_t n1 = d_size(n);
 
@@ -119,7 +130,34 @@ size_t str_ask_size(str* s, size_t n) {
 
     s->d = t;
 
-    return n1;
+    return s;
+
+}
+
+str* str_add(str* s, text_t d) {
+
+    ifx2(s->d, d) return s;
+
+    size_t bs = cap_size(s->d);
+    size_t s1 = text_size(cap_data(s->d), bs);
+    size_t s2 = text_size(d, SIZE_MAX);
+    size_t ss = s1 + s2 - 1;
+
+    if(ss > bs) {
+
+        size_t n = CEIL(ss, def_txt_size); n += n / def_str_add_rate;
+
+        str_ask(s, n * def_txt_size);
+
+        bs = cap_size(s->d);
+
+    }
+
+    char*  b = cap_data(s->d);
+
+    text_copy(b + s1 - 1, d, s2);
+
+    return s;
 
 }
 

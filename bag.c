@@ -33,6 +33,7 @@ void* bag_add_str(bag* b, size_t s, text_t t) {
 
 extern inline pbuf_t cap_data(cap* p);
 extern inline size_t cap_size(cap* p);
+extern inline pbag_t cap_pick(cap* p);
 
 extern inline void   cap_set_hold(cap* p, pobj_t o);
 extern inline pobj_t cap_hold(cap* p);

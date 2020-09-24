@@ -23,7 +23,8 @@ void std_init(void) {
     if(std.rand)          srand((unsigned)time(NULL));
     if(std.new_bag)       set_bag_init(std.new_bag);
     if(std.sac_pack_size) sac_pack_def_size(std.sac_pack_size);
-    if(std.txt_def_size)  txt_def_size(std.txt_def_size);
+    if(std.txt_size)      txt_def_size(std.txt_size);
+    if(std.str_add_rate)  str_add_def_rate(std.str_add_rate);
 
     done = true;
 

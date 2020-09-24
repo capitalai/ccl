@@ -19,7 +19,8 @@ struct std_a {
     bool        rand;           // use random number
     bag_init_f* new_bag;        // default bag_init
     size_t      sac_pack_size;  // default sac pack size
-    size_t      txt_def_size;   // default txt size
+    size_t      txt_size;       // default txt size
+    size_t      str_add_rate;   // default txt add rate
 
 };
 
