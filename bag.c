@@ -34,8 +34,8 @@ void* bag_add_str(bag* b, size_t s, text_t t) {
 extern inline pbuf_t cap_data(cap* p);
 extern inline size_t cap_size(cap* p);
 
-extern inline void   cap_set_refer(cap* p, pobj_t o);
-extern inline pobj_t cap_refer(cap* p);
+extern inline void   cap_set_hold(cap* p, pobj_t o);
+extern inline pobj_t cap_hold(cap* p);
 
 extern inline size_t bag_head_size(bag* b, cap* p);
 extern inline pbuf_t bag_head_data(bag* b, cap* p);

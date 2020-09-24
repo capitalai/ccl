@@ -9,6 +9,7 @@
 #include "std.h"
 #include "lib.h"
 #include "sac.h"
+#include "txt.h"
 
 #include <stdlib.h>
 #include <time.h>
@@ -22,6 +23,7 @@ void std_init(void) {
     if(std.rand)          srand((unsigned)time(NULL));
     if(std.new_bag)       set_bag_init(std.new_bag);
     if(std.sac_pack_size) sac_pack_def_size(std.sac_pack_size);
+    if(std.txt_def_size)  txt_def_size(std.txt_def_size);
 
     done = true;
 

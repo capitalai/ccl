@@ -31,8 +31,8 @@ struct cap {
 
     size_t s_head;  // head size (include cap size)
     size_t s_data;  // data size
-    pbag_t owner;   // it's bag pointer for checking
-    pobj_t refer;   // reference object
+    pbag_t pick;    // it's bag pointer for checking
+    pobj_t hold;    // holder object
 
 };
 
@@ -59,9 +59,10 @@ inline size_t bag_type(bag* b)                                       { return b-
 
 inline pbuf_t cap_data(cap* p) { return (pbuf_t)((char*)p + p->s_head); }
 inline size_t cap_size(cap* p) { return p->s_data; }
+inline pbag_t cap_pick(cap* p) { return p->pick; }
 
-inline void   cap_set_refer(cap* p, pobj_t o) { p->refer = o; }
-inline pobj_t cap_refer(cap* p)               { return p->refer; }
+inline void   cap_set_hold(cap* p, pobj_t o) { p->hold = o; }
+inline pobj_t cap_hold(cap* p)               { return p->hold; }
 
 inline void*  bag_add_bin(bag* b, size_t s,          data_t d) { return data_copy(cap_data(bag_take(b, s, 0)), d, s); }
 extern void*  bag_add_str(bag* b, size_t s CAN_ZERO, text_t t);

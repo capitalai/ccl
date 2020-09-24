@@ -202,7 +202,7 @@ cap* seq_add(seq* o) {
 
     }
 
-    cap_set_refer(r, o);
+    cap_set_hold(r, o);
 
     return r;  
 
@@ -395,7 +395,7 @@ pbuf_t seq_head_data(seq* o, cap* d) {
 
 bool seq_check(seq* o, cap* d) {
 
-    cnf(d && cap_refer(d) == o);
+    cnf(d && cap_hold(d) == o);
 
     _seq_node* p = SEQ_NODE(d); 
     

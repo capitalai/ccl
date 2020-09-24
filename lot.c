@@ -89,7 +89,7 @@ static cap* lot_take(bag* b, size_t s, size_t h) {
 
     p->d_cap.s_head = b->s_base + h;
     p->d_cap.s_data = s1;
-    p->d_cap.owner  = b;
+    p->d_cap.pick   = b;
 
     p->next = o->head; if(p->next) p->next->prev = p;
     p->prev = NULL;
@@ -103,7 +103,7 @@ static bool lot_drop(bag* b, cap* p) {
 
     cxf(p); 
 
-    ccf(p->owner != b);
+    ccf(p->pick != b);
 
     _lot_node* t = (_lot_node*)p;
 

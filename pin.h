@@ -91,7 +91,7 @@ inline void   del_pin(pin* o, pobj_t caller) { del_obj(pin); }
 
 inline cap*   pin_add(pin* o, size_t* n) { return pin_ask(o, n, 0, 0); }
 
-inline bool   pin_check    (pin* o, cap* d) { return d && cap_refer(d) == o; }
+inline bool   pin_check    (pin* o, cap* d) { return d && cap_hold(d) == o; }
 inline size_t pin_head_size(pin* o, cap* d) { return bag_head_size(pobj_pick(o), d); }
 inline pbuf_t pin_head_data(pin* o, cap* d) { return bag_head_data(pobj_pick(o), d); }
 

@@ -175,7 +175,7 @@ static void _sac_make_free(sac* o, _sac_node* a, size_t p, size_t s) {
 
     b->d_cap.s_head = o->d_bag.s_base;
     b->d_cap.s_data = s;
-    b->d_cap.owner  = o;
+    b->d_cap.pick   = o;
 
     b->pack_n = a->pack_n;
     
@@ -190,16 +190,16 @@ static void _sac_make_free(sac* o, _sac_node* a, size_t p, size_t s) {
 
 static cap* _sac_take(sac* o, size_t s, size_t h) {
 
-    size_t  s1 = s + h; 
-    size_t  s2 = s1 + o->d_bag.s_base;
-    size_t  s3 = MAX(s2, o->pack_size);
+    size_t     s1 = s + h; 
+    size_t     s2 = s1 + o->d_bag.s_base;
+    size_t     s3 = MAX(s2, o->pack_size);
 
-    cap*     p = bag_take(o->pick, o->d_bag.s_base + (s3 > s2 ? s3 : s1), 0);
-    _sac_node*  t = cap_data(p);
+    cap*       p = bag_take(o->pick, o->d_bag.s_base + (s3 > s2 ? s3 : s1), 0);
+    _sac_node* t = cap_data(p);
 
     t->d_cap.s_head = o->d_bag.s_base + h;
     t->d_cap.s_data = s;
-    t->d_cap.owner  = o;
+    t->d_cap.pick   = o;
     
     t->pack_n  = NULL;
     t->pack_p  = NULL;
@@ -275,7 +275,7 @@ static inline void _sac_merge_next(_sac_node* p) {
 
 static bool sac_drop(bag* b, cap* p) {
 
-    cnf(p && p->owner == b);
+    cnf(p && p->pick == b);
 
     _sac_node* t = (_sac_node*)p; ccf(t->free_id);  // id != 0 -> free
 

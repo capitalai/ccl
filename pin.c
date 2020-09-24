@@ -247,7 +247,7 @@ cap* pin_ask(pin* o, size_t* n, size_t s, size_t e) {
 
     if(pin_full(o)) obj_set_stat(o, OBJ_STAT_FULL);
 
-    cap_set_refer(x, o);
+    cap_set_hold(x, o);
 
     return x;
 
