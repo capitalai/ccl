@@ -1,5 +1,5 @@
 //
-//  txt.c
+//  str.c
 //  ccl
 //
 //  Created by user on 2020/9/16.
@@ -7,29 +7,29 @@
 //
 
 #include "lib.h"
-#include "txt.h"
+#include "str.h"
 #include "sac.h"
 #include "obj.h"
 
 #if     SIZE_LEVEL == 1
 
-#define DEF_TXT_SIZE 16
+#define DEF_STR_SIZE 16
 
 #else
 #if     SIZE_LEVEL == 2
 
-#define DEF_TXT_SIZE 32
+#define DEF_STR_SIZE 32
 
 #else
 
-#define DEF_TXT_SIZE 64
+#define DEF_STR_SIZE 64
 
 #endif
 #endif
 
 #define DEF_STR_ADD_RATE 4
 
-struct txt {
+struct str_pool {
 
     bag*   b;
     size_t s;
@@ -43,14 +43,14 @@ struct str {
 
 };
 
-static size_t def_txt_size     = DEF_TXT_SIZE;
+static size_t def_str_size     = DEF_STR_SIZE;
 static size_t def_str_add_rate = DEF_STR_ADD_RATE;
 
-size_t txt_def_size(size_t new_size) {
+size_t str_def_size(size_t new_size) {
 
-    if(new_size) def_txt_size = MAX(new_size, DEF_TXT_SIZE);
+    if(new_size) def_str_size = MAX(new_size, DEF_STR_SIZE);
 
-    return def_txt_size;
+    return def_str_size;
 
 }
 
@@ -62,21 +62,21 @@ size_t str_add_def_rate(size_t new_rate) {
 
 }
 
-txt* txt_init(size_t s, pobj_t h) {
+str_pool* str_pool_init(size_t s, pobj_t h) {
 
     bag* pick = h ? pobj_pick(h) : sac_init();
 
-    txt* t = cap_data(bag_take(pick, t_size(txt), 0));
+    str_pool* t = cap_data(bag_take(pick, t_size(str_pool), 0));
 
     t->b = pick;
-    t->s = MAX(s, def_txt_size);
+    t->s = MAX(s, def_str_size);
     t->h = h;
 
     return t;
 
 }
 
-void txt_fini(txt* t) {
+void str_pool_fini(str_pool* t) {
 
     cce(t->h);
 
@@ -84,7 +84,7 @@ void txt_fini(txt* t) {
 
 }
 
-str* str_init(txt* t, text_t source) {
+str* str_init(str_pool* t, text_t source) {
 
     str* s = cap_data(bag_take(t->b, t_size(str), 0));
 
@@ -145,9 +145,9 @@ str* str_add(str* s, text_t d) {
 
     if(ss > bs) {
 
-        size_t n = CEIL(ss, def_txt_size); n += n / def_str_add_rate;
+        size_t n = CEIL(ss, def_str_size); n += n / def_str_add_rate;
 
-        str_ask(s, n * def_txt_size);
+        str_ask(s, n * def_str_size);
 
         bs = cap_size(s->d);
 
