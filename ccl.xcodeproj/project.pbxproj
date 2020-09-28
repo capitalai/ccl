@@ -32,8 +32,8 @@
 		0BEF4EB3248DB80A00AB1101 /* obj.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E9F248DB80900AB1101 /* obj.h */; };
 		0BEF4EB5248DB80A00AB1101 /* com.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4EA1248DB80900AB1101 /* com.c */; };
 		0BEF4EB7248DB80A00AB1101 /* lot.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4EA3248DB80900AB1101 /* lot.c */; };
-		0BF05FD725125FE100A502A0 /* txt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BF05FD525125FE100A502A0 /* txt.h */; };
-		0BF05FD825125FE100A502A0 /* txt.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BF05FD625125FE100A502A0 /* txt.c */; };
+		0BF05FD725125FE100A502A0 /* str.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BF05FD525125FE100A502A0 /* str.h */; };
+		0BF05FD825125FE100A502A0 /* str.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BF05FD625125FE100A502A0 /* str.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +63,8 @@
 		0BEF4E9F248DB80900AB1101 /* obj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = obj.h; sourceTree = "<group>"; };
 		0BEF4EA1248DB80900AB1101 /* com.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = com.c; sourceTree = "<group>"; };
 		0BEF4EA3248DB80900AB1101 /* lot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lot.c; sourceTree = "<group>"; };
-		0BF05FD525125FE100A502A0 /* txt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = txt.h; sourceTree = "<group>"; };
-		0BF05FD625125FE100A502A0 /* txt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = txt.c; sourceTree = "<group>"; };
+		0BF05FD525125FE100A502A0 /* str.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = str.h; sourceTree = "<group>"; };
+		0BF05FD625125FE100A502A0 /* str.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = str.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +106,8 @@
 				0BAAE73824C98FA600B2A161 /* set.c */,
 				0B8C445024ECD4C000FC88E8 /* key.h */,
 				0B8C445124ECD4C000FC88E8 /* key.c */,
-				0BF05FD525125FE100A502A0 /* txt.h */,
-				0BF05FD625125FE100A502A0 /* txt.c */,
+				0BF05FD525125FE100A502A0 /* str.h */,
+				0BF05FD625125FE100A502A0 /* str.c */,
 				0BEF4E8C248DB57400AB1101 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,7 +130,7 @@
 				0B9BA140249C2BA0009849A8 /* seq.h in Headers */,
 				0B8E25DB249691760026BF8C /* pin.h in Headers */,
 				0B8C445224ECD4C000FC88E8 /* key.h in Headers */,
-				0BF05FD725125FE100A502A0 /* txt.h in Headers */,
+				0BF05FD725125FE100A502A0 /* str.h in Headers */,
 				0BEF4EB3248DB80A00AB1101 /* obj.h in Headers */,
 				0BEF4EAE248DB80A00AB1101 /* sac.h in Headers */,
 				0BEF4EAA248DB80A00AB1101 /* inc.h in Headers */,
@@ -208,7 +208,7 @@
 				0BEF4EB1248DB80A00AB1101 /* sac.c in Sources */,
 				0BEF4EB2248DB80A00AB1101 /* std.c in Sources */,
 				0BAAE73A24C98FA600B2A161 /* set.c in Sources */,
-				0BF05FD825125FE100A502A0 /* txt.c in Sources */,
+				0BF05FD825125FE100A502A0 /* str.c in Sources */,
 				0B8E25DE249691830026BF8C /* bag.c in Sources */,
 				0BEF4EA6248DB80A00AB1101 /* obj.c in Sources */,
 				0B9C89E124C69FB80019E0A8 /* pod.c in Sources */,
