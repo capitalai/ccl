@@ -12,6 +12,7 @@
 #include "std.h"
 #include "lot.h"
 #include "sac.h"
+#include "str.h"
 #include "pin.h"
 #include "seq.h"
 #include "pod.h"

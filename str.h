@@ -11,8 +11,8 @@
 
 #include "bag.h"
 
-// str:      text string
-// str_pool: text string pool
+// str is created from str_pool
+// finish str_pool will also finish all str from the str_pool
 
 typedef struct str      str;
 typedef struct str_pool str_pool;
@@ -21,7 +21,7 @@ extern size_t str_def_size    (size_t new_size);
 extern size_t str_add_def_rate(size_t new_rate);
 
 extern str_pool* str_pool_init(size_t s CAN_ZERO, pobj_t h CAN_NULL);  // s = base buffer size, 0 is default size
-extern void      stp_pool_fini(str_pool* t);                           // finish str from pool if no holder
+extern void      str_pool_fini(str_pool* t);                           // finish str from pool if no holder
 
 extern str*   str_init(str_pool* t, text_t source CAN_NULL);  // buffer size = max(base buffer size, aligned source length)
 extern void   str_fini(str* s);

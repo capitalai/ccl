@@ -39,7 +39,8 @@ struct str_pool {
 
 struct str {
 
-    cap* d;
+    cap* data;
+    cap* self;
 
 };
 
@@ -86,13 +87,15 @@ void str_pool_fini(str_pool* t) {
 
 str* str_init(str_pool* t, text_t source) {
 
-    str* s = cap_data(bag_take(t->b, t_size(str), 0));
+    cap* x = bag_take(t->b, t_size(str), 0);
+    str* s = cap_data(x);
 
     size_t n = source ? text_size(source, SIZE_MAX) : 0; if(n < t->s) n = t->s;
 
-    s->d = bag_take(t->b, d_size(n), 0);
+    s->data = bag_take(t->b, d_size(n), 0);
+    s->self = x;
 
-    cap_set_hold(s->d, t->h);
+    cap_set_hold(s->data, t->h);
 
     return s;
 
@@ -100,17 +103,16 @@ str* str_init(str_pool* t, text_t source) {
 
 void str_fini(str* s) {
 
-    cxe(s->d);
-    
-    bag_drop(cap_pick(s->d), s->d);
+    bag* p = cap_pick(s->data);
 
-    s->d = NULL;
+    bag_drop(p, s->data);
+    bag_drop(p, s->self);
 
 }
 
-size_t str_size(str* s) { cxz(s->d); return cap_size(s->d); }
+size_t str_size(str* s) { return cap_size(s->data); }
 
-char*  str_data(str* s) { cxx(s->d); return cap_data(s->d); }
+char*  str_data(str* s) { return cap_data(s->data); }
 
 str* str_ask(str* s, size_t n) {
 
@@ -118,17 +120,17 @@ str* str_ask(str* s, size_t n) {
 
     size_t n1 = d_size(n);
 
-    bag*   b  = cap_pick(s->d);
+    bag*   b  = cap_pick(s->data);
 
     cap*   t  = bag_take(b, n1, 0);
 
-    text_copy(cap_data(t), cap_data(s->d), n1);
+    text_copy(cap_data(t), cap_data(s->data), n1);
 
-    cap_set_hold(t, cap_hold(s->d));
+    cap_set_hold(t, cap_hold(s->data));
 
-    bag_drop(b, s->d);
+    bag_drop(b, s->data);
 
-    s->d = t;
+    s->data = t;
 
     return s;
 
@@ -136,10 +138,10 @@ str* str_ask(str* s, size_t n) {
 
 str* str_add(str* s, text_t d) {
 
-    ifx2(s->d, d) return s;
+    ifx(d) return s;
 
-    size_t bs = cap_size(s->d);
-    size_t s1 = text_size(cap_data(s->d), bs);
+    size_t bs = cap_size(s->data);
+    size_t s1 = text_size(cap_data(s->data), bs);
     size_t s2 = text_size(d, SIZE_MAX);
     size_t ss = s1 + s2 - 1;
 
@@ -149,11 +151,11 @@ str* str_add(str* s, text_t d) {
 
         str_ask(s, n * def_str_size);
 
-        bs = cap_size(s->d);
+        bs = cap_size(s->data);
 
     }
 
-    char*  b = cap_data(s->d);
+    char*  b = cap_data(s->data);
 
     text_copy(b + s1 - 1, d, s2);
 
