@@ -24,16 +24,16 @@
 
 // type declaration
 
+typedef unsigned char      byte_t;
 typedef unsigned int       uint_t;
 typedef unsigned long long ulli_t;  // unsigned long long integer
+typedef long double        real_t;
 typedef const void*        data_t;
 typedef const char*        text_t;
-typedef unsigned char      byte_t;
 
 // generic type using void*
 
 typedef void* parg_t;    // any argument pointer for creating object
-typedef void* psec_t;    // any section  pointer
 typedef void* pobj_t;    // any object   pointer
 typedef void* pbuf_t;    // any buffer   pointer
 
@@ -44,6 +44,14 @@ union ptr {
     void*   p;
     byte_t* b;
     char*   c;
+
+};
+
+typedef struct utf8_t utf8_t;
+
+struct utf8_t {
+
+    byte_t c[4];
 
 };
 
