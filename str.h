@@ -11,8 +11,8 @@
 
 #include "bag.h"
 
-// str is created from str_pool
-// finish str_pool will also finish all str from the str_pool
+// str is created from str_pool, drop self when finish
+// finish str_pool will also drop all str from the str_pool if no holder
 
 typedef struct str      str;
 typedef struct str_pool str_pool;
