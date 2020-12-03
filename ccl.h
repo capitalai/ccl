@@ -18,6 +18,7 @@
 #include "pod.h"
 #include "set.h"
 #include "key.h"
+#include "var.h"
 
 // memory management: bag, sac, lot
 // building object:             obj
