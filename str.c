@@ -97,6 +97,8 @@ str* str_init(str_pool* t, text_t source) {
 
     cap_set_hold(s->data, t->h);
 
+    if(source) text_copy(cap_data(s->data), source, n);
+
     return s;
 
 }
