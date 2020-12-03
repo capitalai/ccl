@@ -1,11 +1,3 @@
-//
-//  seq.c
-//  ccl
-//
-//  Created by user on 2020/6/20.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #include "lib.h"
 #include "seq.h"
 #include "sac.h"

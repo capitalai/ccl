@@ -1,11 +1,3 @@
-//
-//  var.h
-//  ccl
-//
-//  Created by user on 2020/10/2.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #ifndef var_h
 #define var_h
 

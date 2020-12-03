@@ -1,11 +1,3 @@
-//
-//  lot.h
-//  lib_ccl
-//
-//  Created by Capita Lai on 2018/7/5.
-//  Copyright © 2018 Capita Lai. All rights reserved.
-//
-
 #ifndef lot_h
 #define lot_h
 

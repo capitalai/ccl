@@ -1,11 +1,3 @@
-//
-//  pin.h
-//  lib_ccl
-//
-//  Created by user on 2018/7/14.
-//  Copyright © 2018年 Infinita. All rights reserved.
-//
-
 #ifndef pin_h
 #define pin_h
 

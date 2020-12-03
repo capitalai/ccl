@@ -1,11 +1,3 @@
-//
-//  std.h
-//  lib_ccl
-//
-//  Created by Capita Lai on 2018/7/21.
-//  Copyright © 2018 Capita Lai. All rights reserved.
-//
-
 #ifndef std_h
 #define std_h
 

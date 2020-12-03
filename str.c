@@ -1,11 +1,3 @@
-//
-//  str.c
-//  ccl
-//
-//  Created by user on 2020/9/16.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #include "lib.h"
 #include "str.h"
 #include "sac.h"

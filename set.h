@@ -1,11 +1,3 @@
-//
-//  set.h
-//  ccl
-//
-//  Created by user on 2020/7/23.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #ifndef set_h
 #define set_h
 

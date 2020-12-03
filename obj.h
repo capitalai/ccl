@@ -1,11 +1,3 @@
-//
-//  obj.h
-//  lib_ccl
-//
-//  Created by user on 2018/7/5.
-//  Copyright © 2018年 Infinita. All rights reserved.
-//
-
 #ifndef obj_h
 #define obj_h
 

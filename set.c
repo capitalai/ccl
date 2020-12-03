@@ -1,11 +1,3 @@
-//
-//  set.c
-//  ccl
-//
-//  Created by user on 2020/7/23.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #include "lib.h"
 #include "set.h"
 #include "pod.h"

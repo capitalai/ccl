@@ -1,11 +1,3 @@
-//
-//  str.h
-//  ccl
-//
-//  Created by user on 2020/9/16.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #ifndef str_h
 #define str_h
 

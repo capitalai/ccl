@@ -1,11 +1,3 @@
-//
-//  sac.c
-//  lib_ccl
-//
-//  Created by user on 2018/7/11.
-//  Copyright © 2018年 Infinita. All rights reserved.
-//
-
 #include "lib.h"
 #include "sac.h"
 #include "lot.h"

@@ -1,11 +1,3 @@
-//
-//  sac.h
-//  lib_ccl
-//
-//  Created by user on 2018/7/11.
-//  Copyright © 2018年 Infinita. All rights reserved.
-//
-
 #ifndef sac_h
 #define sac_h
 

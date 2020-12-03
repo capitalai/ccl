@@ -1,11 +1,3 @@
-//
-//  com.h
-//  lib_ccl
-//
-//  Created by user on 2018/6/21.
-//  Copyright © 2018年 Infinita. All rights reserved.
-//
-
 #ifndef com_h
 #define com_h
 

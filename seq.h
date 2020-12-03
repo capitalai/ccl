@@ -1,11 +1,3 @@
-//
-//  seq.h
-//  ccl
-//
-//  Created by user on 2020/6/20.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #ifndef seq_h
 #define seq_h
 

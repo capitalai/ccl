@@ -1,11 +1,3 @@
-//
-//  pin.c
-//  lib_ccl
-//
-//  Created by user on 2018/7/14.
-//  Copyright © 2018年 Infinita. All rights reserved.
-//
-
 #include "lib.h"
 #include "pin.h"
 #include "sac.h"

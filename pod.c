@@ -1,11 +1,3 @@
-//
-//  pod.c
-//  ccl
-//
-//  Created by user on 2020/6/19.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #include "lib.h"
 #include "pod.h"
 #include "sac.h"

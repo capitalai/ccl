@@ -1,11 +1,3 @@
-//
-//  bag.c
-//  lib_ccl
-//
-//  Created by user on 2020/6/10.
-//  Copyright © 2020年 Infinita. All rights reserved.
-//
-
 #include "lib.h"
 #include "bag.h"
 #include "sac.h"

@@ -1,11 +1,3 @@
-//
-//  ccl.h
-//  lib_ccl
-//
-//  Created by user on 2018/7/18.
-//  Copyright © 2018年 Infinita. All rights reserved.
-//
-
 #ifndef ccl_h
 #define ccl_h
 
@@ -50,9 +42,6 @@
 
 // ISSUES:
 //
-//  - when finishing object, remove pick, do not remove hold
-//  - add all dropped memory to sac slot
-//  - check memory problem of sac
 //
 
 #endif /* ccl_h */

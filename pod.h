@@ -1,11 +1,3 @@
-//
-//  pod.h
-//  ccl
-//
-//  Created by user on 2020/6/19.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #ifndef pod_h
 #define pod_h
 

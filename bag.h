@@ -1,11 +1,3 @@
-//
-//  bag.h
-//  lib_ccl
-//
-//  Created by Capita Lai on 2020/6/10.
-//  Copyright © 2020 Capita Lai. All rights reserved.
-//
-
 #ifndef bag_h
 #define bag_h
 

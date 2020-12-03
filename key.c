@@ -1,11 +1,3 @@
-//
-//  key.c
-//  ccl
-//
-//  Created by user on 2020/8/19.
-//  Copyright © 2020 capita. All rights reserved.
-//
-
 #include "lib.h"
 #include "key.h"
 #include "seq.h"
@@ -167,28 +159,28 @@ void key_fini(pobj_t x) {
 
 static int _key_comp(pod* x, cap*   a, cap* b) {
 
-  key* o = pobj_bind(x);
+    key* o = pobj_bind(x);
 
-  _key_node* an = seq_head_data(COR.data, a);
-  _key_node* bn = seq_head_data(COR.data, b);
+    _key_node* an = seq_head_data(COR.data, a);
+    _key_node* bn = seq_head_data(COR.data, b);
 
-  if(an->hash > bn->hash) return  1;
-  if(an->hash < bn->hash) return -1;
+    if(an->hash > bn->hash) return  1;
+    if(an->hash < bn->hash) return -1;
 
-  return text_comp(cap_data(an->text), cap_data(bn->text), cap_size(an->text));
+    return text_comp(cap_data(an->text), cap_data(bn->text), cap_size(an->text));
 
 }
 
 static int _key_find(pod* x, data_t a, cap* b) {
 
-  key*                  o  = pobj_bind(x);
-  const _key_find_node* an = a;
-  _key_node*            bn = seq_head_data(COR.data, b);
+    key*                  o  = pobj_bind(x);
+    const _key_find_node* an = a;
+    _key_node*            bn = seq_head_data(COR.data, b);
 
-  if(an->hash > bn->hash) return  1;
-  if(an->hash < bn->hash) return -1;
+    if(an->hash > bn->hash) return  1;
+    if(an->hash < bn->hash) return -1;
 
-  return text_comp(an->text, cap_data(bn->text), cap_size(bn->text));
+    return text_comp(an->text, cap_data(bn->text), cap_size(bn->text));
 
 }
 
@@ -284,11 +276,11 @@ text_t key_name(key* o, cap* p) {
 
 static size_t _key_loop(seq* x, seq_l* p) {
 
-  key* o = p->e;
+    key* o = p->e;
 
-  o->d_work.d_loop->d = p->d;
+    o->d_work.d_loop->d = p->d;
 
-  return o->d_work.f_loop(o, o->d_work.d_loop);
+    return o->d_work.f_loop(o, o->d_work.d_loop);
 
 }
 
