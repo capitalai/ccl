@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		0BAAE73A24C98FA600B2A161 /* set.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BAAE73824C98FA600B2A161 /* set.c */; };
 		0BC7001A252769110017F480 /* var.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BC70018252769110017F480 /* var.h */; };
 		0BC7001B252769120017F480 /* var.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BC70019252769110017F480 /* var.c */; };
+		0BD25091257BDC8000856418 /* str_file.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BD2508F257BDC7F00856418 /* str_file.h */; };
+		0BD25092257BDC8000856418 /* str_file.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BD25090257BDC8000856418 /* str_file.c */; };
 		0BEF4EA6248DB80A00AB1101 /* obj.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4E92248DB80800AB1101 /* obj.c */; };
 		0BEF4EA9248DB80A00AB1101 /* lib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E95248DB80800AB1101 /* lib.h */; };
 		0BEF4EAA248DB80A00AB1101 /* inc.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEF4E96248DB80800AB1101 /* inc.h */; };
@@ -53,6 +55,8 @@
 		0BAAE73824C98FA600B2A161 /* set.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = set.c; sourceTree = "<group>"; };
 		0BC70018252769110017F480 /* var.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = var.h; sourceTree = "<group>"; };
 		0BC70019252769110017F480 /* var.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = var.c; sourceTree = "<group>"; };
+		0BD2508F257BDC7F00856418 /* str_file.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = str_file.h; sourceTree = "<group>"; };
+		0BD25090257BDC8000856418 /* str_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_file.c; sourceTree = "<group>"; };
 		0BEF4E8B248DB57400AB1101 /* libccl.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libccl.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BEF4E92248DB80800AB1101 /* obj.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = obj.c; sourceTree = "<group>"; };
 		0BEF4E95248DB80800AB1101 /* lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib.h; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 		0BEF4E82248DB57400AB1101 = {
 			isa = PBXGroup;
 			children = (
+				0BD25090257BDC8000856418 /* str_file.c */,
+				0BD2508F257BDC7F00856418 /* str_file.h */,
 				0BEF4E97248DB80800AB1101 /* ccl.h */,
 				0BEF4E96248DB80800AB1101 /* inc.h */,
 				0BEF4E95248DB80800AB1101 /* lib.h */,
@@ -145,6 +151,7 @@
 				0B9BA144249D32BA009849A8 /* pod.h in Headers */,
 				0BEF4EAF248DB80A00AB1101 /* com.h in Headers */,
 				0BEF4EAB248DB80A00AB1101 /* ccl.h in Headers */,
+				0BD25091257BDC8000856418 /* str_file.h in Headers */,
 				0BAAE73924C98FA600B2A161 /* set.h in Headers */,
 				0BEF4EAD248DB80A00AB1101 /* std.h in Headers */,
 				0B8E25DF249691830026BF8C /* bag.h in Headers */,
@@ -178,8 +185,9 @@
 		0BEF4E83248DB57400AB1101 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = capita;
+				ORGANIZATIONNAME = capitalai;
 				TargetAttributes = {
 					0BEF4E8A248DB57400AB1101 = {
 						CreatedOnToolsVersion = 11.5;
@@ -187,7 +195,7 @@
 				};
 			};
 			buildConfigurationList = 0BEF4E86248DB57400AB1101 /* Build configuration list for PBXProject "ccl" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -218,6 +226,7 @@
 				0BAAE73A24C98FA600B2A161 /* set.c in Sources */,
 				0BF05FD825125FE100A502A0 /* str.c in Sources */,
 				0B8E25DE249691830026BF8C /* bag.c in Sources */,
+				0BD25092257BDC8000856418 /* str_file.c in Sources */,
 				0BEF4EA6248DB80A00AB1101 /* obj.c in Sources */,
 				0B9C89E124C69FB80019E0A8 /* pod.c in Sources */,
 				0BEF4EB7248DB80A00AB1101 /* lot.c in Sources */,
@@ -286,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -346,9 +355,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -356,24 +366,40 @@
 		0BEF4E90248DB57400AB1101 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 0.2;
+				DEVELOPMENT_TEAM = P6B94AXYLH;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
+				TVOS_DEPLOYMENT_TARGET = "";
+				WATCHOS_DEPLOYMENT_TARGET = "";
 			};
 			name = Debug;
 		};
 		0BEF4E91248DB57400AB1101 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 0.2;
+				DEVELOPMENT_TEAM = P6B94AXYLH;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				IPHONEOS_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
+				TVOS_DEPLOYMENT_TARGET = "";
+				WATCHOS_DEPLOYMENT_TARGET = "";
 			};
 			name = Release;
 		};
