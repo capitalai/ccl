@@ -69,25 +69,27 @@ str_pool* str_pool_init(size_t s, pobj_t h) {
 
 }
 
-void str_pool_fini(str_pool* t) {
+void str_pool_fini(str_pool* p) {
 
-    cce(t->h);
+    cce(p->h);
 
-    bag_fini(t->b);
+    bag_fini(p->b);
 
 }
 
-str* str_init(str_pool* t, text_t source) {
+str* str_init(str_pool* p, text_t source) {
 
-    cap* x = bag_take(t->b, t_size(str), 0);
+    cap* x = bag_take(p->b, t_size(str), 0);
     str* s = cap_data(x);
 
-    size_t n = source ? text_size(source, SIZE_MAX) : 0; if(n < t->s) n = t->s;
+    size_t n = source ? text_size(source, SIZE_MAX) : 0; if(n < p->s) n = p->s;
 
-    s->data = bag_take(t->b, d_size(n), 0);
+    s->data = bag_take(p->b, d_size(n), 0);
     s->self = x;
 
-    cap_set_hold(s->data, t->h);
+    cap_set_hold(s->data, p->h);
+
+    char* t = cap_data(s->data); t[0] = 0;  // initialize empty string
 
     if(source) text_copy(cap_data(s->data), source, n);
 
