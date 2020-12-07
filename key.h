@@ -70,8 +70,8 @@ extern cap*   key_prev(key* o, cap* p);
 
 extern text_t key_name(key* o, cap* p);
 
-extern size_t key_loop(key* o, key_loop_f f, text_t start, text_t stop, parg_t extra);
-extern size_t key_hoop(key* o, key_loop_f f, text_t start, text_t stop, parg_t extra);
+extern size_t key_loop(key* o, key_loop_f f, text_t start CAN_NULL, text_t stop CAN_NULL, parg_t extra CAN_NULL);
+extern size_t key_hoop(key* o, key_loop_f f, text_t start CAN_NULL, text_t stop CAN_NULL, parg_t extra CAN_NULL);
 
 extern bool   key_check(key* o, cap* d);  // check d is this key item
 
