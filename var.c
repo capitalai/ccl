@@ -6,6 +6,7 @@
 
 typedef struct _var      _var;
 typedef struct _var_node _var_node;
+typedef struct _var_work _var_work;
 
 struct _var_node {
 
@@ -15,6 +16,13 @@ struct _var_node {
     cap*   p_bin;
     str*   p_str;
     val    d_val;
+
+};
+
+struct _var_work {
+
+    var_l*      d_loop;     // (loop) loop data
+    var_loop_f* f_loop;     // (loop) user function for loop
 
 };
 
@@ -31,6 +39,7 @@ struct var {
 
     obj       d_base;    // object data
     _var      d_core;    // core data
+    _var_work d_work;    // work data
 
 };
 
@@ -317,6 +326,51 @@ val* var_get_bool(var* o, text_t k) {
   _var_node* n = cap_data(c);          cnx(n->x_type == var_type_bool);
 
   return &n->d_val;
+
+}
+
+static size_t _var_loop(key* x, key_l* p) {
+
+    var*       o = p->e;
+    _var_node* n = cap_data(p->d);
+
+    o->d_work.d_loop->n = key_name(x, p->d);
+    o->d_work.d_loop->t = n->x_type;
+
+    switch(n->x_type) {
+        case var_type_bool:
+        case var_type_int:
+        case var_type_num:
+        case var_type_char:
+        case var_type_ptr:   o->d_work.d_loop->v = &n->d_val; break;
+        case var_type_str:   o->d_work.d_loop->s = n->p_str;  break;
+        case var_type_bin:   o->d_work.d_loop->b = n->p_bin;  break;
+        case var_type_obj:   o->d_work.d_loop->o = n->p_obj;  break;
+    }
+
+    return o->d_work.f_loop(o, o->d_work.d_loop);
+
+}
+
+size_t var_loop(var* o, var_loop_f f, parg_t extra) {
+
+    var_l d = { extra };
+
+    o->d_work.f_loop = f;
+    o->d_work.d_loop = &d;
+
+    return key_loop(COR.data, _var_loop, NULL, NULL, o);
+
+}
+
+size_t var_hoop(var* o, var_loop_f f, parg_t extra) {
+
+    var_l d = { extra };
+
+    o->d_work.f_loop = f;
+    o->d_work.d_loop = &d;
+
+    return key_hoop(COR.data, _var_loop, NULL, NULL, o);
 
 }
 
