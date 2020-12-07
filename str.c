@@ -31,8 +31,9 @@ struct str_pool {
 
 struct str {
 
-    cap* data;
-    cap* self;
+    cap*   data;
+    cap*   self;
+    size_t length;
 
 };
 
@@ -89,9 +90,20 @@ str* str_init(str_pool* p, text_t source) {
 
     cap_set_hold(s->data, p->h);
 
-    char* t = cap_data(s->data); t[0] = 0;  // initialize empty string
+    char* t = cap_data(s->data);
 
-    if(source) text_copy(cap_data(s->data), source, n);
+    if(source) { 
+        
+        text_copy(t, source, n);
+        s->length = n - 1;
+
+    }
+    else {
+
+        t[0] = 0;
+        s->length = 0;
+
+    }
 
     return s;
 
@@ -106,9 +118,11 @@ void str_fini(str* s) {
 
 }
 
-size_t str_size(str* s) { return cap_size(s->data); }
+size_t str_size   (str* s) { return cap_size(s->data); }
+char*  str_data   (str* s) { return cap_data(s->data); }
+size_t str_length (str* s) { return s->length; }
 
-char*  str_data(str* s) { return cap_data(s->data); }
+void   str_refresh(str* s) { s->length = text_size(cap_data(s->data), cap_size(s->data)) - 1; }
 
 str* str_ask(str* s, size_t n) {
 
@@ -137,9 +151,9 @@ str* str_add(str* s, text_t d) {
     ifx(d) return s;
 
     size_t bs = cap_size(s->data);
-    size_t s1 = text_size(cap_data(s->data), bs);
+    size_t s1 = s->length;
     size_t s2 = text_size(d, SIZE_MAX);
-    size_t ss = s1 + s2 - 1;
+    size_t ss = s1 + s2;
 
     if(ss > bs) {
 
@@ -147,13 +161,13 @@ str* str_add(str* s, text_t d) {
 
         str_ask(s, n * def_str_size);
 
-        bs = cap_size(s->data);
-
     }
 
     char*  b = cap_data(s->data);
 
-    text_copy(b + s1 - 1, d, s2);
+    text_copy(b + s1, d, s2);
+
+    s->length = ss - 1;
 
     return s;
 
