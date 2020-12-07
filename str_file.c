@@ -26,11 +26,11 @@ static void _str_load_stdin(str* s) {
 
 }
 
-str* str_load(str_pool* p, text_t source) {
+str* str_load(str_pool* p, text_t source_file) {
 
     str* r;
 
-    if(source == NULL) {
+    if(source_file == NULL) {
 
         r = str_init(p, NULL);
 
@@ -42,9 +42,9 @@ str* str_load(str_pool* p, text_t source) {
 
     struct stat st;
 
-    if(stat(source, &st) < 0 || (st.st_mode & S_IFREG) == 0 || st.st_size == 0) return NULL;
+    if(stat(source_file, &st) < 0 || (st.st_mode & S_IFREG) == 0 || st.st_size == 0) return NULL;
 
-    FILE* f = fopen(source, "r"); if(f == NULL) return NULL;
+    FILE* f = fopen(source_file, "r"); if(f == NULL) return NULL;
 
     r = str_init(p, NULL);
 
@@ -56,27 +56,26 @@ str* str_load(str_pool* p, text_t source) {
 
     fclose(f);
 
+    str_refresh(r);
+
     return r;
 
 }
 
-bool str_save(str* s, text_t target) { 
+bool str_save(str* s, text_t target_file) { 
 
     FILE* f;
 
-    if(target) { 
+    if(target_file) { 
       
-        f = fopen(target, "w"); 
+        f = fopen(target_file, "w"); 
     
         if(f == NULL) return false;
 
     }
     else f = stdout;
 
-    char*  d = str_data(s);
-    size_t l = text_size(d, 0); if(l > 0) l--;
-
-    size_t r = fwrite(d, l, 1, f);
+    size_t r = fwrite(str_data(s), str_length(s), 1, f);
 
     if(f != stdout) fclose(f);
 
