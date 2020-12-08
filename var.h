@@ -87,6 +87,8 @@ extern uint_t var_get_type(var* o, text_t k);
 extern size_t var_loop(var* o, var_loop_f f, parg_t extra CAN_NULL);
 extern size_t var_hoop(var* o, var_loop_f f, parg_t extra CAN_NULL);
 
+extern str_pool* var_str_pool(var* o);  // get str_pool of var
+
 inline var* new_var  (void)          { return (var*)var_init(NULL, NULL, NULL); }
 inline var* new_var_c(pobj_t p_hold) { return (var*)var_init(NULL, NULL, p_hold); }
 

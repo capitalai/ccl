@@ -374,6 +374,8 @@ size_t var_hoop(var* o, var_loop_f f, parg_t extra) {
 
 }
 
+str_pool* var_str_pool(var* o) { return COR.pool; }
+
 extern inline var* new_var(void);
 extern inline var* new_var_c(pobj_t p_hold);
 extern inline void del_var(var* o, pobj_t caller);
