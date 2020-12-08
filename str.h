@@ -23,8 +23,10 @@ extern char*  str_data  (str* s);
 extern size_t str_length(str* s);
 
 extern void   str_refresh(str* s);  // refresh string length
+extern void   str_clear  (str* s);
 
-extern str*   str_ask(str* s, size_t n);           // ask string buffer size (total size)
-extern str*   str_add(str* s, text_t d CAN_NULL);
+extern str*   str_ask(str* s, size_t n);                              // ask string buffer size (total size)
+extern str*   str_add(str* s, text_t d CAN_NULL, size_t n CAN_ZERO);  // add string, n = 0 => SIZE_MAX
+extern str*   str_set(str* s, text_t d CAN_NULL, size_t n CAN_ZERO);  // set string, n = 0 => SIZE_MAX
 
 #endif /* str_h */

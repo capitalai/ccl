@@ -123,6 +123,7 @@ char*  str_data   (str* s) { return cap_data(s->data); }
 size_t str_length (str* s) { return s->length; }
 
 void   str_refresh(str* s) { s->length = text_size(cap_data(s->data), cap_size(s->data)) - 1; }
+void   str_clear  (str* s) { char* d = cap_data(s->data); d[0] = 0; s->length = 0; }
 
 str* str_ask(str* s, size_t n) {
 
@@ -146,13 +147,13 @@ str* str_ask(str* s, size_t n) {
 
 }
 
-str* str_add(str* s, text_t d) {
+str* str_add(str* s, text_t d, size_t n) {
 
     ifx(d) return s;
 
     size_t bs = cap_size(s->data);
     size_t s1 = s->length;
-    size_t s2 = text_size(d, SIZE_MAX);
+    size_t s2 = text_size(d, n);
     size_t ss = s1 + s2;
 
     if(ss > bs) {
@@ -173,3 +174,32 @@ str* str_add(str* s, text_t d) {
 
 }
 
+str* str_set(str* s, text_t d, size_t n) {
+
+    ifx(d) { str_clear(s); return s; }
+
+    size_t bs  = cap_size(s->data);
+    size_t ts  = text_size(d, n);
+    size_t len = ts - 1;
+
+    if(ts > bs) {
+
+        str_clear(s);
+
+        size_t c = CEIL(ts, def_str_size); c += c / def_str_add_rate;
+
+        str_ask(s, c * def_str_size);
+
+    }
+
+    char*  b = cap_data(s->data);
+
+    text_copy(b, d, len);
+
+    b[len] = 0;
+
+    s->length = len;
+
+    return s;
+
+}
