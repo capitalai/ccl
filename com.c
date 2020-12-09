@@ -111,17 +111,9 @@ size_t note_size(size_t s) {
 
 size_t text_size(text_t t, size_t s) {
 
-    static text_t last = NULL;
-    static size_t size = 0;
+    cxz(t);
 
-    if(s) return t ? strnlen(t, s) + 1 : 0;
-
-    if(t == last) return size;  // no recount if text is same, use non-zero s to force recount
-
-    last = t;
-    size = t ? strnlen(t, SIZE_MAX - 1) + 1 : 0;
-
-    return size;
+    return strnlen(t, s ? s : SIZE_MAX - 1) + 1;
 
 }
 
