@@ -18,7 +18,7 @@ static void _str_load_stdin(str* s) {
 
         b[r] = 0;
 
-        str_add(s, b);
+        str_add(s, b, 0);
 
         if(r < STR_LOAD_BUFFER) break;
 
@@ -26,39 +26,37 @@ static void _str_load_stdin(str* s) {
 
 }
 
-str* str_load(str_pool* p, text_t source_file) {
-
-    str* r;
+bool str_load(str* s, text_t source_file) {
 
     if(source_file == NULL) {
 
-        r = str_init(p, NULL);
+        str_clear(s);
 
-        _str_load_stdin(r);
+        _str_load_stdin(s);
 
-        return r;
+        return true;
 
     }
 
     struct stat st;
 
-    if(stat(source_file, &st) < 0 || (st.st_mode & S_IFREG) == 0 || st.st_size == 0) return NULL;
+    if(stat(source_file, &st) < 0 || (st.st_mode & S_IFREG) == 0 || st.st_size == 0) return false;
 
-    FILE* f = fopen(source_file, "r"); if(f == NULL) return NULL;
+    FILE* f = fopen(source_file, "r"); if(f == NULL) return false;
 
-    r = str_init(p, NULL);
+    str_clear(s);
 
-    str_ask(r, st.st_size);
+    str_ask(s, st.st_size);
 
-    char* d = str_data(r);
+    char* d = str_data(s);
 
     fread(d, 1, st.st_size, f);
 
     fclose(f);
 
-    str_refresh(r);
+    str_refresh(s);
 
-    return r;
+    return true;
 
 }
 
