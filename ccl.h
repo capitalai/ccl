@@ -5,12 +5,14 @@
 #include "lot.h"
 #include "sac.h"
 #include "str.h"
+#include "str_file.h"
 #include "pin.h"
 #include "seq.h"
 #include "pod.h"
 #include "set.h"
 #include "key.h"
 #include "var.h"
+#include "var_text.h"
 
 // memory management: bag, sac, lot
 // building object:             obj
@@ -20,6 +22,7 @@
 
 // TODO:
 //
+//  - add str_utf8, dir_loop
 //  - add var, dim, dot (can add / del for data, text, ptr, obj, var, dim, dot)
 // 
 //  - deprecated design
