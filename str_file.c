@@ -50,7 +50,9 @@ bool str_load(str* s, text_t source_file) {
 
     char* d = str_data(s);
 
-    fread(d, 1, st.st_size, f);
+    fread(d, 1, st.st_size, f); 
+    
+    d[st.st_size] = 0;
 
     fclose(f);
 
