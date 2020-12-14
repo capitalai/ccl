@@ -139,7 +139,8 @@ static _var_node* _var_set(var* o, text_t k) {
             case var_type_char: p->d_val.v_utf8.c[0] = 0; 
                                 p->d_val.v_utf8.c[1] = 0; 
                                 p->d_val.v_utf8.c[2] = 0; 
-                                p->d_val.v_utf8.c[3] = 0; break;
+                                p->d_val.v_utf8.c[3] = 0; 
+                                p->d_val.v_utf8.c[4] = 0; break;
             case var_type_ptr:  p->d_val.v_type = 0; 
                                 p->d_val.v_data = NULL;   break;
             case var_type_str:  str_fini(p->p_str);           p->p_str = NULL; break;
@@ -218,6 +219,8 @@ bool var_set_char(var* o, text_t k, utf8_t v) {
     n->d_val.v_utf8.c[1] = v.c[1];
     n->d_val.v_utf8.c[2] = v.c[2];
     n->d_val.v_utf8.c[3] = v.c[3];
+    n->d_val.v_utf8.c[4] = v.c[4];
+
     n->x_type            = var_type_char;
 
     return true;

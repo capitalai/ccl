@@ -39,11 +39,12 @@ union ptr {
 
 };
 
-typedef struct utf8_t utf8_t;
+typedef union utf8_t utf8_t;
 
-struct utf8_t {
+union utf8_t {
 
-    byte_t c[4];
+    byte_t c[5];
+    char   s[5];
 
 };
 
