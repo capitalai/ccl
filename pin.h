@@ -24,7 +24,7 @@ struct pin_a {
 
 struct pin_l {
 
-    bool      t;  // set true will use index when start or terminate loop
+    bool      t;  // set true will use index on start or terminate loop
     parg_t    e;  // extra argument for loop function
     size_t    i;  // current index (can set new value as next index)
     cap*      d;  // current data

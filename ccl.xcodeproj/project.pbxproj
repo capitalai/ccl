@@ -11,6 +11,10 @@
 		0B5B45062580DAFD0038840A /* dir.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B5B45042580DAFD0038840A /* dir.c */; };
 		0B5B450F25825B070038840A /* str_utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B5B450D25825B070038840A /* str_utf8.h */; };
 		0B5B451025825B080038840A /* str_utf8.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B5B450E25825B070038840A /* str_utf8.c */; };
+		0B74E4E025876F0B00456DB5 /* arg.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B74E4DE25876F0B00456DB5 /* arg.h */; };
+		0B74E4E125876F0C00456DB5 /* arg.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B74E4DF25876F0B00456DB5 /* arg.c */; };
+		0B74E4E5258786B500456DB5 /* txt.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B74E4E3258786B500456DB5 /* txt.h */; };
+		0B74E4E6258786B500456DB5 /* txt.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B74E4E4258786B500456DB5 /* txt.c */; };
 		0B8C445224ECD4C000FC88E8 /* key.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B8C445024ECD4C000FC88E8 /* key.h */; };
 		0B8C445324ECD4C000FC88E8 /* key.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C445124ECD4C000FC88E8 /* key.c */; };
 		0B8E25DA249691760026BF8C /* pin.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B8E25D8249691760026BF8C /* pin.c */; };
@@ -51,6 +55,10 @@
 		0B5B45042580DAFD0038840A /* dir.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dir.c; sourceTree = "<group>"; };
 		0B5B450D25825B070038840A /* str_utf8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = str_utf8.h; sourceTree = "<group>"; };
 		0B5B450E25825B070038840A /* str_utf8.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = str_utf8.c; sourceTree = "<group>"; };
+		0B74E4DE25876F0B00456DB5 /* arg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arg.h; sourceTree = "<group>"; };
+		0B74E4DF25876F0B00456DB5 /* arg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = arg.c; sourceTree = "<group>"; };
+		0B74E4E3258786B500456DB5 /* txt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = txt.h; sourceTree = "<group>"; };
+		0B74E4E4258786B500456DB5 /* txt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = txt.c; sourceTree = "<group>"; };
 		0B8C445024ECD4C000FC88E8 /* key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = key.h; sourceTree = "<group>"; };
 		0B8C445124ECD4C000FC88E8 /* key.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = key.c; sourceTree = "<group>"; };
 		0B8E25D8249691760026BF8C /* pin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pin.c; sourceTree = "<group>"; };
@@ -125,6 +133,8 @@
 				0BEF4E9F248DB80900AB1101 /* obj.h */,
 				0BEF4E92248DB80800AB1101 /* obj.c */,
 				0B8E25D9249691760026BF8C /* pin.h */,
+				0B74E4DE25876F0B00456DB5 /* arg.h */,
+				0B74E4DF25876F0B00456DB5 /* arg.c */,
 				0B8E25D8249691760026BF8C /* pin.c */,
 				0B9BA13E249C2BA0009849A8 /* seq.h */,
 				0B9BA13F249C2BA0009849A8 /* seq.c */,
@@ -137,6 +147,8 @@
 				0BC70018252769110017F480 /* var.h */,
 				0BC70019252769110017F480 /* var.c */,
 				0BD250B9257CB3D800856418 /* var_text.h */,
+				0B74E4E3258786B500456DB5 /* txt.h */,
+				0B74E4E4258786B500456DB5 /* txt.c */,
 				0BD250BA257CB3D800856418 /* var_text.c */,
 				0BEF4E8C248DB57400AB1101 /* Products */,
 			);
@@ -166,7 +178,9 @@
 				0BC7001A252769110017F480 /* var.h in Headers */,
 				0BD250BB257CB3D800856418 /* var_text.h in Headers */,
 				0BEF4EB3248DB80A00AB1101 /* obj.h in Headers */,
+				0B74E4E025876F0B00456DB5 /* arg.h in Headers */,
 				0BEF4EAE248DB80A00AB1101 /* sac.h in Headers */,
+				0B74E4E5258786B500456DB5 /* txt.h in Headers */,
 				0BEF4EAA248DB80A00AB1101 /* inc.h in Headers */,
 				0BEF4EB0248DB80A00AB1101 /* lot.h in Headers */,
 				0B9BA144249D32BA009849A8 /* pod.h in Headers */,
@@ -241,9 +255,11 @@
 				0B8C445324ECD4C000FC88E8 /* key.c in Sources */,
 				0B9BA141249C2BA0009849A8 /* seq.c in Sources */,
 				0B5B451025825B080038840A /* str_utf8.c in Sources */,
+				0B74E4E6258786B500456DB5 /* txt.c in Sources */,
 				0B8E25DA249691760026BF8C /* pin.c in Sources */,
 				0BEF4EB1248DB80A00AB1101 /* sac.c in Sources */,
 				0BC7001B252769120017F480 /* var.c in Sources */,
+				0B74E4E125876F0C00456DB5 /* arg.c in Sources */,
 				0B5B45062580DAFD0038840A /* dir.c in Sources */,
 				0BEF4EB2248DB80A00AB1101 /* std.c in Sources */,
 				0BAAE73A24C98FA600B2A161 /* set.c in Sources */,
