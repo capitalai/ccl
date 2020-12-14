@@ -1,11 +1,3 @@
-//
-//  dir.c
-//  ccl
-//
-//  Created by user on 2020/12/9.
-//  Copyright © 2020 capitalai. All rights reserved.
-//
-
 #include <sys/stat.h>
 #include <dirent.h>
 
