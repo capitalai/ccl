@@ -51,7 +51,7 @@ void arg_add_set(text_t n) {
 
 }
 
-void arg_load(int argc, char* argv[]) {
+void arg_load(int argc, const char* argv[]) {
 
     cce(arg_data.loaded);
 
@@ -88,27 +88,23 @@ void arg_load(int argc, char* argv[]) {
 
 }
 
-text_t arg_get_arg(text_t n) {
+str* arg_arg(text_t n) {
 
     cnx(arg_data.loaded);
 
-    str* s = var_get_str(arg_data.arg, n);
-
-    return s ? str_data(s) : NULL;
+    return var_get_str(arg_data.arg, n);
 
 }
 
-text_t arg_get_set(text_t n) {
+str* arg_set(text_t n) {
 
     cnx(arg_data.loaded);
 
-    str* s = var_get_str(arg_data.set, n);
-
-    return s ? str_data(s) : NULL;
+    return var_get_str(arg_data.set, n);
 
 }
 
-bool arg_get_opt(text_t n) {
+bool arg_opt(text_t n) {
 
     cnf(arg_data.loaded);
 
@@ -118,13 +114,11 @@ bool arg_get_opt(text_t n) {
 
 }
 
-text_t arg_get_ext(size_t n) {
+str* arg_ext(size_t n) {
 
     cnx(arg_data.loaded);
 
-    str* d = txt_get(arg_data.ext, n);
-
-    return d ? str_data(d) : NULL;
+    return txt_get(arg_data.ext, n);
 
 }
 

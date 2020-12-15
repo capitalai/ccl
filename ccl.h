@@ -16,6 +16,8 @@
 #include "key.h"
 #include "var.h"
 #include "var_text.h"
+#include "txt.h"
+#include "arg.h"
 
 // memory management: bag, sac, lot
 // building object:             obj
