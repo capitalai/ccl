@@ -48,6 +48,8 @@
 		0BEF4EB7248DB80A00AB1101 /* lot.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF4EA3248DB80900AB1101 /* lot.c */; };
 		0BF05FD725125FE100A502A0 /* str.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BF05FD525125FE100A502A0 /* str.h */; };
 		0BF05FD825125FE100A502A0 /* str.c in Sources */ = {isa = PBXBuildFile; fileRef = 0BF05FD625125FE100A502A0 /* str.c */; };
+		C11EE05325D6BC7A000888F8 /* str_code.h in Headers */ = {isa = PBXBuildFile; fileRef = C11EE05125D6BC7A000888F8 /* str_code.h */; };
+		C11EE05425D6BC7A000888F8 /* str_code.c in Sources */ = {isa = PBXBuildFile; fileRef = C11EE05225D6BC7A000888F8 /* str_code.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		0BEF4EA3248DB80900AB1101 /* lot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lot.c; sourceTree = "<group>"; };
 		0BF05FD525125FE100A502A0 /* str.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = str.h; sourceTree = "<group>"; };
 		0BF05FD625125FE100A502A0 /* str.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = str.c; sourceTree = "<group>"; };
+		C11EE05125D6BC7A000888F8 /* str_code.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = str_code.h; sourceTree = "<group>"; };
+		C11EE05225D6BC7A000888F8 /* str_code.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = str_code.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				0B5B450E25825B070038840A /* str_utf8.c */,
 				0BD2508F257BDC7F00856418 /* str_file.h */,
 				0BD25090257BDC8000856418 /* str_file.c */,
+				C11EE05125D6BC7A000888F8 /* str_code.h */,
+				C11EE05225D6BC7A000888F8 /* str_code.c */,
 				0BEF4E9F248DB80900AB1101 /* obj.h */,
 				0BEF4E92248DB80800AB1101 /* obj.c */,
 				0B8E25D9249691760026BF8C /* pin.h */,
@@ -171,6 +177,7 @@
 			files = (
 				0B9BA140249C2BA0009849A8 /* seq.h in Headers */,
 				0B8E25DB249691760026BF8C /* pin.h in Headers */,
+				C11EE05325D6BC7A000888F8 /* str_code.h in Headers */,
 				0B5B45052580DAFD0038840A /* dir.h in Headers */,
 				0B5B450F25825B070038840A /* str_utf8.h in Headers */,
 				0B8C445224ECD4C000FC88E8 /* key.h in Headers */,
@@ -270,6 +277,7 @@
 				0B9C89E124C69FB80019E0A8 /* pod.c in Sources */,
 				0BEF4EB7248DB80A00AB1101 /* lot.c in Sources */,
 				0BD250BC257CB3D800856418 /* var_text.c in Sources */,
+				C11EE05425D6BC7A000888F8 /* str_code.c in Sources */,
 				0BEF4EB5248DB80A00AB1101 /* com.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,7 +423,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				IPHONEOS_DEPLOYMENT_TARGET = "";
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 				TVOS_DEPLOYMENT_TARGET = "";
@@ -435,7 +443,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				IPHONEOS_DEPLOYMENT_TARGET = "";
-				MACOSX_DEPLOYMENT_TARGET = "";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 				TVOS_DEPLOYMENT_TARGET = "";

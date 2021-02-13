@@ -16,6 +16,5 @@
 
 extern uint_t str_code_type(str* s, size_t pos);
 extern size_t str_code_next(str* s, size_t pos, uint_t* type);      // return next position of code
-extern size_t str_code_line(str* s, size_t pos, text_t end_chars);  // return position on newline or end_chars
 
 #endif /* str_code_h */
