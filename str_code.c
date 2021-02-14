@@ -222,15 +222,19 @@ static void str_code_space(str_code* d) {
 
 }
 
-static void str_code_quote(str_code* d) {
+static void str_code_quote(str_code* d) {  // quote is ended on same quote sign or line end
 
   byte_t q = d->c[d->n];
 
   ++d->n;
 
-  while(d->n < d->l && d->c[d->n] != q) { if(d->c[d->n] == '\\' && d->n + 1 < d->l) ++d->n; ++d->n; }
+  while(d->n < d->l && d->c[d->n] != q && d->c[d->n] != 0x0D && d->c[d->n] != 0x0A) { 
+    
+    if(d->c[d->n] == '\\' && d->n + 1 < d->l) ++d->n; ++d->n; 
+    
+  }
 
-  if(d->n < d->l) ++d->n;
+  if(d->n < d->l && d->c[d->n] == q) ++d->n;
 
 }
 
