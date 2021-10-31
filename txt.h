@@ -46,6 +46,8 @@ extern void   txt_sort(txt* o, txt_comp_f f, parg_t e CAN_NULL);
 extern size_t txt_loop(txt* o, txt_loop_f f, txt_l* p CAN_NULL);
 extern size_t txt_hoop(txt* o, txt_loop_f f, txt_l* p CAN_NULL);  // loop backward
 
+extern str_pool* txt_str_pool(txt* o);  // get str_pool of txt
+
 // inline functions
 
 inline txt*   new_txt(void) { return (txt*)txt_init(NULL, NULL, NULL); }

@@ -202,3 +202,5 @@ size_t txt_hoop(txt* o, txt_loop_f f, txt_l* p) {
     return pin_hoop(COR.data, _txt_loop, &d);
 
 }
+
+str_pool* txt_str_pool(txt* o) { return COR.pool; }
