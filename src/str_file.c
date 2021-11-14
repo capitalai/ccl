@@ -77,7 +77,7 @@ bool str_save(str* s, text_t target_file) {
 
     size_t r = fwrite(str_data(s), str_length(s), 1, f);
 
-    if(f != stdout) fclose(f);
+    if(f != stdout) fclose(f); else fflush(f);
 
     return r > 0;
 
