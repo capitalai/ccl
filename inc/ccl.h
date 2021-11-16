@@ -17,6 +17,7 @@
 #include "var.h"
 #include "var_text.h"
 #include "txt.h"
+#include "txt_file.h"
 #include "arg.h"
 
 // memory management: bag, sac, lot
