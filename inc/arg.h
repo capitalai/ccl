@@ -11,7 +11,7 @@ extern void   arg_init(void);
 extern void   arg_add_arg(text_t n);  // add named argument before arg_load()
 extern void   arg_add_set(text_t n);  // add named setting  before arg_load()
 
-extern void   arg_load(int argc, const char* argv[]);  // processing arguments
+extern void   arg_load(int argc, char* argv[]);  // processing arguments
 
 extern str*   arg_arg(text_t n);    // named argument
 extern str*   arg_set(text_t n);    // -name value

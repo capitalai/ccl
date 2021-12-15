@@ -51,7 +51,7 @@ void arg_add_set(text_t n) {
 
 }
 
-void arg_load(int argc, const char* argv[]) {
+void arg_load(int argc, char* argv[]) {
 
     cce(arg_data.loaded);
 
