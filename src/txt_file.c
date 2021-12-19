@@ -60,7 +60,7 @@ size_t txt_load_line(txt* t, str* s, size_t p) {
 
     str_set(ts, d, i + 1);
 
-    return d[i] == '\n' ? i + 1 : i;
+    return d[i] == '\n' ? p + i + 1 : p + i;
 }
 
 size_t txt_load_trim_line(txt* t, str* s, size_t p) {
