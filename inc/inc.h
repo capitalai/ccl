@@ -3,10 +3,10 @@
 
 // inc: base defines and macros. include this header file if no other includes.
 
-#include <inttypes.h>
 #include <limits.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 
 // function usage directive
 
