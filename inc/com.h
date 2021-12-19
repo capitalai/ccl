@@ -24,8 +24,8 @@ extern int    fail(text_t c, text_t v, text_t f, text_t m, int l);
 typedef pbuf_t take_f(size_t s, void* e);
 typedef void   drop_f(pbuf_t d, void* e);
 typedef int    note_f(text_t m, void* e);
-typedef void   term_f(int    r, void* e);
-typedef int    fail_f(text_t c, text_t v, text_t f, text_t m, int l, void* e);  // cause, varible, function, module, line
+typedef void   term_f(int r, void* e);
+typedef int fail_f(text_t c, text_t v, text_t f, text_t m, int l, void* e);  // cause, varible, function, module, line
 
 extern bool new_take(take_f f, void* e);
 extern bool new_drop(drop_f f, void* e);
@@ -36,9 +36,9 @@ extern bool new_fail(fail_f f, void* e);
 // system functions without user replacement
 
 extern pbuf_t _take(size_t s);
-extern void   _drop(void*  d);
+extern void   _drop(void* d);
 extern int    _note(text_t m);
-extern void   _term(int    r);
+extern void   _term(int r);
 extern int    _fail(text_t c, text_t v, text_t f, text_t m, int l);
 
 // typed version of function
@@ -54,11 +54,17 @@ extern size_t note_size(size_t s);
 // TEST(test object, cause string, varible): test null pointer on new object
 // TAKE(data pointer, data size): take with test null
 
-#define FAIL(c, v)       fail(c, #v, __func__, __FILE__, __LINE__)
+#define FAIL(c, v) fail(c, #v, __func__, __FILE__, __LINE__)
 
-#define TEST(p, c, v)    if(p == NULL) { FAIL(c, v); return NULL; }
+#define TEST(p, c, v) \
+if(p == NULL) {       \
+FAIL(c, v);           \
+return NULL;          \
+}
 
-#define TAKE(v, s)       v = take(s); TEST(v, "take", s)
+#define TAKE(v, s) \
+v = take(s);       \
+TEST(v, "take", s)
 
 // function for memory processing
 
@@ -69,7 +75,7 @@ extern size_t note_size(size_t s);
 //            return size > s is string too long
 
 extern size_t text_size(text_t t, size_t s);
-extern char*  text_copy(char*  t, text_t d, size_t s);
+extern char*  text_copy(char* t, text_t d, size_t s);
 extern int    text_comp(text_t a, text_t b, size_t s);
 extern uint_t text_hash(text_t a);
 extern size_t text_type(void);
@@ -109,7 +115,10 @@ extern void   data_fill(pbuf_t a, size_t s, data_t b, size_t n);
 // 16    4    4    5    5
 
 extern int log2_m(size_t n);
-inline int log2_n(size_t n) { int r = log2_m(n); return (n ^ (1 << r)) ? r + 1 : r; }
+inline int log2_n(size_t n) {
+    int r = log2_m(n);
+    return (n ^ (1 << r)) ? r + 1 : r;
+}
 inline int log2_a(size_t s) { return s ? log2_m(s) + 1 : 0; }
 inline int log2_b(size_t s) { return s ? log2_n(s) + 1 : 0; }
 

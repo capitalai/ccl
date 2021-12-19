@@ -15,6 +15,6 @@
 #define STR_CODE_COMMENT 9
 
 extern uint_t str_code_type(str* s, size_t pos);
-extern size_t str_code_next(str* s, size_t pos, uint_t* type);      // return next position of code
+extern size_t str_code_next(str* s, size_t pos, uint_t* type);  // return next position of code
 
 #endif /* str_code_h */

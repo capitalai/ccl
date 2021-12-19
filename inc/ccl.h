@@ -1,24 +1,24 @@
 #ifndef ccl_h
 #define ccl_h
 
+#include "arg.h"
 #include "com.h"
 #include "dir.h"
-#include "std.h"
+#include "key.h"
 #include "lot.h"
+#include "pin.h"
+#include "pod.h"
 #include "sac.h"
+#include "seq.h"
+#include "set.h"
+#include "std.h"
 #include "str.h"
 #include "str_file.h"
 #include "str_utf8.h"
-#include "pin.h"
-#include "seq.h"
-#include "pod.h"
-#include "set.h"
-#include "key.h"
-#include "var.h"
-#include "var_text.h"
 #include "txt.h"
 #include "txt_file.h"
-#include "arg.h"
+#include "var.h"
+#include "var_text.h"
 
 // memory management: bag, sac, lot
 // building object:             obj
@@ -30,7 +30,7 @@
 //
 //  - add str_utf8, dir_loop
 //  - add var, dim, dot (can add / del for data, text, ptr, obj, var, dim, dot)
-// 
+//
 //  - deprecated design
 //
 //  - add set object: pod + a list which can store data with index
