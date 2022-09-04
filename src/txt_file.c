@@ -20,7 +20,7 @@ bool txt_load(txt* t, text_t source_file, txt_loader* f) {
 
     str_pool_fini(sp);
 
-    return false;
+    return true;
 }
 
 bool txt_save(txt* t, text_t target_file) {
