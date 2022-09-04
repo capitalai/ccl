@@ -1,6 +1,0 @@
-#!/bin/sh
-cmake -S . -B build/lib
-cmake --build build/lib
-cmake --install build/lib
-cmake -S test -B build
-cmake --build build
