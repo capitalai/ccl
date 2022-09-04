@@ -16,7 +16,6 @@ typedef struct _pod_node _pod_node;
 typedef struct _pod_work _pod_work;
 
 struct _pod_node {  // pod node
-
     cap*       self;  // self, for bag_drop()
     _pod_node* ba;    // before a
     cap*       a;
