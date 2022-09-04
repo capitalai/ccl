@@ -45,7 +45,6 @@ struct _sac_node {
 static const size_t _sac_node_s = t_size(_sac_node);
 
 struct sac {  // sac is a bag
-
     bag d_bag;
 
     bag*       pick;
