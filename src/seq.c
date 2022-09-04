@@ -1,7 +1,7 @@
-#include "seq.h"
-#include "lib.h"
-#include "pin.h"
-#include "sac.h"
+#include "ccl/seq.h"
+#include "ccl/lib.h"
+#include "ccl/pin.h"
+#include "ccl/sac.h"
 
 typedef struct _seq      _seq;
 typedef struct _seq_node _seq_node;

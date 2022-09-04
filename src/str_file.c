@@ -1,7 +1,7 @@
 
-#include "str_file.h"
-#include "com.h"
-#include "lib.h"
+#include "ccl/str_file.h"
+#include "ccl/com.h"
+#include "ccl/lib.h"
 #include <stdio.h>
 #include <sys/stat.h>
 

@@ -1,5 +1,5 @@
-#include "obj.h"
-#include "lib.h"
+#include "ccl/obj.h"
+#include "ccl/lib.h"
 
 bool obj_set_bind(pobj_t o, parg_t p) {
     ccf(pobj_bind(o));

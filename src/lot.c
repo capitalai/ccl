@@ -1,5 +1,5 @@
-#include "lot.h"
-#include "lib.h"
+#include "ccl/lot.h"
+#include "ccl/lib.h"
 
 #define plot(o) P(o, lot)
 

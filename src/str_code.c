@@ -1,6 +1,6 @@
 
-#include "str_code.h"
-#include "lib.h"
+#include "ccl/str_code.h"
+#include "ccl/lib.h"
 
 // ID      = 1
 // NUM     = 2

@@ -1,6 +1,6 @@
 
-#include "var_text.h"
-#include "lib.h"
+#include "ccl/var_text.h"
+#include "ccl/lib.h"
 #include <stdio.h>
 
 typedef struct var_save_data var_save_data;

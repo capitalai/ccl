@@ -1,8 +1,8 @@
 
-#include "txt_file.h"
-#include "lib.h"
-#include "str_code.h"
-#include "str_file.h"
+#include "ccl/txt_file.h"
+#include "ccl/lib.h"
+#include "ccl/str_code.h"
+#include "ccl/str_file.h"
 #include <stdio.h>
 
 bool txt_load(txt* t, text_t source_file, txt_loader* f) {

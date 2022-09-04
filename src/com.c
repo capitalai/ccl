@@ -1,5 +1,5 @@
-#include "com.h"
-#include "lib.h"
+#include "ccl/com.h"
+#include "ccl/lib.h"
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>

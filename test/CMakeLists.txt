@@ -1,6 +1,4 @@
 cmake_minimum_required(VERSION 3.21)
 project(ccl)
-link_directories(${CMAKE_SOURCE_DIR}/../build/lib)
+link_libraries(${PROJECT_NAME})
 add_executable(test_txt_file "test_txt_file.c")
-target_include_directories(test_txt_file PRIVATE /usr/local/include)
-target_link_libraries(test_txt_file PRIVATE ccl)
